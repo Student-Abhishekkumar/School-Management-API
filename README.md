@@ -18,11 +18,14 @@ Run this command inside the project folder :
 
 ## 4️⃣ Configure .env File
 Create a .env file in the root directory and add:
-  `DB_HOST=localhost
-  DB_PORT=3360
-  DB_USER=root  # Change this to your MySQL user
-  DB_PASS=your_mysql_password
-  DB_NAME=schoolDB`
+
+```javascript
+DB_HOST=localhost
+DB_PORT=3360
+DB_USER=root  # Change this to your MySQL user
+DB_PASS=your_mysql_password
+DB_NAME=schoolDB
+```
 
 
 ## 5️⃣ Start the Server
