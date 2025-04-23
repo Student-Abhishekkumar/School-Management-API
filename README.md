@@ -23,7 +23,7 @@ Create a .env file in the root directory and add:
 
 ```javascript
 DB_HOST=localhost
-DB_PORT=3360
+DB_PORT=3306
 DB_USER=root  # Change this to your MySQL user
 DB_PASS=your_mysql_password
 DB_NAME=schoolDB
@@ -39,13 +39,13 @@ npm start    # Runs standard server
 
 
 ## ✅ After running, you should see:
-**Server running on port 3360**
+**Server running on port 3306**
 
 
 ## 📌 API Endpoints
 ## ➕ Add a New School
 
-- URL: POST http://localhost:3360/api/addSchool
+- URL: POST http://127.0.0.1:3306/api/addSchool
 - Request Body (JSON format)
 
 ```javascript  
@@ -63,7 +63,7 @@ npm start    # Runs standard server
 ```
 
 ## 🔍 List Schools Near Location
-- URL: GET http://localhost:3360/api/listSchools?latitude=40.7128&longitude=-74.0060
+- URL: GET http://127.0.0.1:3306/api/listSchools?latitude=40.7128&longitude=-74.0060
 - Expected Response (Sorted by Distance)
 ```javascript
 [
