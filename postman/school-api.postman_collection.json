@@ -1,0 +1,73 @@
+{
+    "info": {
+        "name": "School Management API",
+        "_postman_id": "12345678-abcd-efgh-ijkl-9876543210",
+        "description": "Collection for testing School Management API endpoints.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add School",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Test School\",\n    \"address\": \"123 Main Street\",\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3360/api/addSchool",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3360",
+                    "path": ["api", "addSchool"]
+                }
+            },
+            "response": [
+                {
+                    "message": "School added successfully",
+                    "schoolId": 1
+                },
+                {
+                    "message": "Error: School already exists"
+                }
+            ]
+        },
+        {
+            "name": "List Schools",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3360/api/listSchools?latitude=40.7128&longitude=-74.0060",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3360",
+                    "path": ["api", "listSchools"],
+                    "query": [
+                        { "key": "latitude", "value": "40.7128" },
+                        { "key": "longitude", "value": "-74.0060" }
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "schoolId": 1,
+                    "name": "Test School",
+                    "address": "123 Main Street",
+                    "latitude": 40.7128,
+                    "longitude": -74.0060
+                },
+                {
+                    "message": "No schools found"
+                }
+            ]
+        }
+    ]
+}
